@@ -1,0 +1,36 @@
+:root {
+  --first-color: #e3ccb2;
+  --second-color: #f9ec7e;
+  --third-color: #e26274;
+}
+
+.list {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding-left: 0;
+}
+
+.item {
+  padding: 15px;
+  width: 250px;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--third-color);
+  border-radius: 8px;
+  border: none;
+  color: var(--second-color);
+}
+
+@media screen and (min-width: 768px) {
+  .item {
+    padding: 20px;
+    width: 500px;
+    font-size: 20px;
+    height: 100px;
+  }
+}
