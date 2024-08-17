@@ -12,16 +12,17 @@ import Login from '../../pages/Login/Login';
 import Register from '../../pages/Register/Register';
 import NotFound from '../../pages/NotFound/NotFound';
 import Header from '../Header/Header';
+import Layout from '../Layout/Layout';
 
 function App() {
-  const loading = useSelector(selectLoading);
-  const error = useSelector(selectError);
+  // const loading = useSelector(selectLoading);
+  // const error = useSelector(selectError);
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchContacts());
+  // }, [dispatch]);
 
   return (
     <div>
@@ -33,11 +34,12 @@ function App() {
       {loading && <h1>Loading...</h1>}
       {error && <h2>Something went wrong. Please try again!</h2>} */}
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/contacts" element={<Contacts />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/contacts" element={<Contacts />} />
+        </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

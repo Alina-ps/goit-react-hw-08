@@ -12,12 +12,15 @@ const Header = () => {
       <NavLink className={buildLinkClass} to="/">
         Home
       </NavLink>
-      <NavLink className={buildLinkClass} to="/register">
+      <NavLink className={buildLinkClass} to="/contacts">
+        Contacts
+      </NavLink>
+      {/* <NavLink className={buildLinkClass} to="/register">
         Register
       </NavLink>
       <NavLink className={buildLinkClass} to="/login">
         Log in
-      </NavLink>
+      </NavLink> */}
     </div>
   );
 };
