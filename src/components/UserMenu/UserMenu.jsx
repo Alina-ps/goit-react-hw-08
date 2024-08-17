@@ -11,7 +11,7 @@ const UserMenu = () => {
       UserMenu
       <p>Welcome, {user.name}</p>
       <button type="submit" onClick={() => dispatch(logoutThunk())}>
-        Exit
+        Logout
       </button>
     </div>
   );

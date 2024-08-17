@@ -1,10 +1,3 @@
-// import ContactForm from '../ContactForm/ContactForm';
-// import SearchBox from '../SearchBox/SearchBox';
-// import ContactList from '../ContactList/ContactList';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { selectError, selectLoading } from '../../redux/selectors';
-// import { useEffect } from 'react';
-// import { fetchContacts } from '../../redux/contactsOps';
 import { Route, Routes } from 'react-router-dom';
 import Layout from '../Layout/Layout';
 import RegistrationPage from '../../pages/RegistrationPage/RegistrationPage';
@@ -19,7 +12,6 @@ import PrivateRoute from '../Routes/PrivateRoute';
 import RestrictedRoute from '../Routes/RestrictedRoute';
 import { selectIsRefreshing } from '../../redux/auth/selectors';
 import Loader from '../Loader/Loader';
-import AppBar from '../AppBar/AppBar';
 
 function App() {
   const dispatch = useDispatch();
@@ -27,25 +19,11 @@ function App() {
   useEffect(() => {
     dispatch(refreshUserThunk());
   }, [dispatch]);
-  // const loading = useSelector(selectLoading);
-  // const error = useSelector(selectError);
-
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(fetchContacts());
-  // }, [dispatch]);
 
   return isRefreshing ? (
     <Loader />
   ) : (
     <div>
-      {/* <h1>Phonebook</h1>
-      <ContactForm />
-      <SearchBox />
-      <ContactList />
-      {loading && <h1>Loading...</h1>}
-      {error && <h2>Something went wrong. Please try again!</h2>} */}
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
