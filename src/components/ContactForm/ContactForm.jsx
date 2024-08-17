@@ -18,7 +18,6 @@ const ContactForm = () => {
       number: values.number,
     };
     dispatch(addContact(newContact));
-
     actions.resetForm();
   };
 

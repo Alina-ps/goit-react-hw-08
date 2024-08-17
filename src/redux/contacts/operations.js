@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { goitAPI } from '../../config/goitAPI';
+import toast from 'react-hot-toast';
 
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll',
@@ -18,6 +19,9 @@ export const deleteContact = createAsyncThunk(
   async (id, thunkAPI) => {
     try {
       const { data } = await goitAPI.delete(`contacts/${id}`);
+      toast.success('Contact deleted successfully!', {
+        style: { background: '#f9ec7e', color: '#e26274' },
+      });
       return data.id;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -30,6 +34,9 @@ export const addContact = createAsyncThunk(
   async (body, thunkAPI) => {
     try {
       const { data } = await goitAPI.post('contacts', body);
+      toast.success('Congrats. Your contact is added!', {
+        style: { background: '#f9ec7e', color: '#e26274' },
+      });
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
