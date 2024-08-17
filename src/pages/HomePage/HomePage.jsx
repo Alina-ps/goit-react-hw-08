@@ -1,8 +1,17 @@
 import { Link } from 'react-router-dom';
 import s from './HomePage.module.css';
+import { useSelector } from 'react-redux';
+import { selectIsLoggedIn, selectUser } from '../../redux/auth/selectors';
 
 const HomePage = () => {
-  return (
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+  const user = useSelector(selectUser);
+
+  return isLoggedIn ? (
+    <div>
+      <h1 className={s.title}>Welcome, {user.name}</h1>
+    </div>
+  ) : (
     <div>
       <h1 className={s.title}>Welcome to My Contacts App</h1>
       <p className={s.subtitle}>

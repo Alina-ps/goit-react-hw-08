@@ -1,8 +1,8 @@
 .nav {
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 24px;
+  margin-right: 40px;
 }
 
 .link {
