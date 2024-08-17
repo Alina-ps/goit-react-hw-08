@@ -16,6 +16,8 @@ import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { refreshUserThunk } from '../../redux/auth/operations';
+import PrivateRoute from '../Routes/PrivateRoute';
+import RestrictedRoute from '../Routes/RestrictedRoute';
 
 function App() {
   const dispatch = useDispatch();
@@ -43,10 +45,31 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="/contacts" element={<ContactsPage />} />
+          <Route
+            path="/contacts"
+            element={
+              <PrivateRoute>
+                <ContactsPage />
+              </PrivateRoute>
+            }
+          />
         </Route>
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegistrationPage />} />
+        <Route
+          path="/login"
+          element={
+            <RestrictedRoute>
+              <LoginPage />
+            </RestrictedRoute>
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <RestrictedRoute>
+              <RegistrationPage />
+            </RestrictedRoute>
+          }
+        />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>
