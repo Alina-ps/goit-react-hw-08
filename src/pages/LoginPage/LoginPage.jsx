@@ -1,41 +1,20 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-import s from './Register.module.css';
+import s from './LoginPage.module.css';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { registerThunk } from '../../redux/auth/operations';
 
-const Register = () => {
-  const dispatch = useDispatch();
-
+const LoginPage = () => {
   const initialValues = {
-    name: '',
     email: '',
     password: '',
   };
-
   const handleSubmit = (values, actions) => {
-    dispatch(registerThunk(values));
+    console.log(values);
     actions.resetForm();
   };
-
   return (
     <div>
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
         <Form className={s.form}>
-          <label className={s.label}>
-            Username
-            <Field
-              className={s.input}
-              type="text"
-              name="username"
-              placeholder="Enter your name"
-            />
-            <ErrorMessage
-              name="username"
-              component="span"
-              className={s.error}
-            />
-          </label>
           <label className={s.label}>
             Email
             <Field
@@ -62,12 +41,12 @@ const Register = () => {
           </label>
 
           <button className={s.btn} type="submit">
-            Register
+            Login
           </button>
           <p className={s.text}>
-            You already have account?
-            <Link to="/login" className={s.span}>
-              Log in
+            You do not have an account?
+            <Link to="/register" className={s.span}>
+              Sign up!
             </Link>
           </p>
         </Form>
@@ -76,4 +55,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default LoginPage;

@@ -6,13 +6,13 @@
 // import { useEffect } from 'react';
 // import { fetchContacts } from '../../redux/contactsOps';
 import { Route, Routes } from 'react-router-dom';
-import Home from '../../pages/Home/Home';
-import Contacts from '../../pages/Contacts/Contacts';
-import Login from '../../pages/Login/Login';
-import Register from '../../pages/Register/Register';
-import NotFound from '../../pages/NotFound/NotFound';
 import Header from '../Header/Header';
 import Layout from '../Layout/Layout';
+import RegistrationPage from '../../pages/RegistrationPage/RegistrationPage';
+import HomePage from '../../pages/HomePage/HomePage';
+import LoginPage from '../../pages/LoginPage/LoginPage';
+import ContactsPage from '../../pages/ContactsPage/ContactsPage';
+import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage';
 
 function App() {
   // const loading = useSelector(selectLoading);
@@ -35,12 +35,12 @@ function App() {
       {error && <h2>Something went wrong. Please try again!</h2>} */}
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="/contacts" element={<Contacts />} />
+          <Route index element={<HomePage />} />
+          <Route path="/contacts" element={<ContactsPage />} />
         </Route>
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegistrationPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>
   );

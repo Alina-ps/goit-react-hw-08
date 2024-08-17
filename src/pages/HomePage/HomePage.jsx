@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import s from './Home.module.css';
+import s from './HomePage.module.css';
 
-const Home = () => {
+const HomePage = () => {
   return (
     <div>
       <h1 className={s.title}>Welcome to My Contacts App</h1>
@@ -15,4 +15,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;
