@@ -32,12 +32,19 @@ const slice = createSlice({
         state.isLoggedIn = true;
       })
       .addCase(refreshUserThunk.fulfilled, (state, action) => {
+        state.isRefreshing = false;
         state.isLoggedIn = true;
         state.user.name = action.payload.name;
         state.user.email = action.payload.email;
       })
       .addCase(logoutThunk.fulfilled, () => {
         return initialState;
+      })
+      .addCase(refreshUserThunk.pending, (state, action) => {
+        state.isRefreshing = true;
+      })
+      .addCase(refreshUserThunk.rejected, (state, action) => {
+        state.isRefreshing = true;
       });
   },
 });
