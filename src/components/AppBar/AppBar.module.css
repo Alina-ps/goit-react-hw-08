@@ -1,5 +1,7 @@
 .header {
   margin: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -10,15 +12,5 @@
   gap: 24px;
   font-size: 30px;
   opacity: 0.9;
-}
-
-.link {
-  color: white;
-  font-weight: 700;
-  text-decoration: none;
-  font-size: 20px;
-}
-
-.active {
-  color: #1e1f21;
+  background-color: #e26274;
 }

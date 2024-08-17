@@ -6,7 +6,6 @@
 // import { useEffect } from 'react';
 // import { fetchContacts } from '../../redux/contactsOps';
 import { Route, Routes } from 'react-router-dom';
-import Header from '../Header/Header';
 import Layout from '../Layout/Layout';
 import RegistrationPage from '../../pages/RegistrationPage/RegistrationPage';
 import HomePage from '../../pages/HomePage/HomePage';
@@ -20,6 +19,7 @@ import PrivateRoute from '../Routes/PrivateRoute';
 import RestrictedRoute from '../Routes/RestrictedRoute';
 import { selectIsRefreshing } from '../../redux/auth/selectors';
 import Loader from '../Loader/Loader';
+import AppBar from '../AppBar/AppBar';
 
 function App() {
   const dispatch = useDispatch();
@@ -40,7 +40,6 @@ function App() {
     <Loader />
   ) : (
     <div>
-      <Header />
       {/* <h1>Phonebook</h1>
       <ContactForm />
       <SearchBox />

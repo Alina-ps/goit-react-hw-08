@@ -1,0 +1,17 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.link {
+  color: #e3ccb2;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.active {
+  color: #f9ec7e;
+}
