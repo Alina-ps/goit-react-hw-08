@@ -1,17 +1,23 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import s from './Register.module.css';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { registerThunk } from '../../redux/auth/operations';
 
 const Register = () => {
+  const dispatch = useDispatch();
+
   const initialValues = {
     name: '',
     email: '',
     password: '',
   };
+
   const handleSubmit = (values, actions) => {
-    console.log(values);
+    dispatch(registerThunk(values));
     actions.resetForm();
   };
+
   return (
     <div>
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
