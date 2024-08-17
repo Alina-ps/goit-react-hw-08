@@ -23,18 +23,14 @@ const RegistrationPage = () => {
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
         <Form className={s.form}>
           <label className={s.label}>
-            Username
+            Name
             <Field
               className={s.input}
               type="text"
-              name="username"
+              name="name"
               placeholder="Enter your name"
             />
-            <ErrorMessage
-              name="username"
-              component="span"
-              className={s.error}
-            />
+            <ErrorMessage name="name" component="span" className={s.error} />
           </label>
           <label className={s.label}>
             Email
@@ -65,7 +61,7 @@ const RegistrationPage = () => {
             Register
           </button>
           <p className={s.text}>
-            You already have account?
+            You already have an account?
             <Link to="/login" className={s.span}>
               Log in
             </Link>

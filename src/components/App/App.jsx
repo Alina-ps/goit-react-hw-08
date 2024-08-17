@@ -13,8 +13,15 @@ import HomePage from '../../pages/HomePage/HomePage';
 import LoginPage from '../../pages/LoginPage/LoginPage';
 import ContactsPage from '../../pages/ContactsPage/ContactsPage';
 import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { refreshUserThunk } from '../../redux/auth/operations';
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(refreshUserThunk());
+  }, [dispatch]);
   // const loading = useSelector(selectLoading);
   // const error = useSelector(selectError);
 

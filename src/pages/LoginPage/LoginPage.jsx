@@ -1,16 +1,25 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import s from './LoginPage.module.css';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginThunk } from '../../redux/auth/operations';
+import { selectIsLoggedIn } from '../../redux/auth/selectors';
 
 const LoginPage = () => {
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+  const dispatch = useDispatch();
+
   const initialValues = {
     email: '',
     password: '',
   };
   const handleSubmit = (values, actions) => {
-    console.log(values);
+    dispatch(loginThunk(values));
     actions.resetForm();
   };
+  if (isLoggedIn) {
+    return <Navigate to="/" />;
+  }
   return (
     <div>
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
