@@ -1,9 +1,13 @@
 import { useDispatch } from 'react-redux';
 import s from './Contact.module.css';
-import { deleteContact } from '../../redux/contacts/operations';
+import { openModal } from '../../redux/modal/slice';
 
 const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
+
+  const handleDelete = () => {
+    dispatch(openModal(id));
+  };
 
   return (
     <>
@@ -11,11 +15,7 @@ const Contact = ({ id, name, number }) => {
         <p className={s.contactText}>{name}</p>
         <p className={s.contactText}>{number}</p>
       </div>
-      <button
-        className={s.contactBtn}
-        onClick={() => dispatch(deleteContact(id))}
-        type="button"
-      >
+      <button className={s.contactBtn} onClick={handleDelete} type="button">
         Delete
       </button>
     </>
