@@ -43,3 +43,18 @@ export const addContact = createAsyncThunk(
     }
   }
 );
+
+export const editContact = createAsyncThunk(
+  'contacts/editContact',
+  async ({ id, updatedContact }, thunkAPI) => {
+    try {
+      const { data } = await goitAPI.patch(`contacts/${id}`, updatedContact);
+      toast.success('Contact updated successfully!', {
+        style: { background: '#f9ec7e', color: '#e26274' },
+      });
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
