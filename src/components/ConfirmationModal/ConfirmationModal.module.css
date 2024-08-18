@@ -1,0 +1,73 @@
+:root {
+  --first-color: #e3ccb2;
+  --second-color: #f9ec7e;
+  --third-color: #e26274;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 20px;
+  width: 400px;
+  background-color: var(--third-color);
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 5px 15px rgba(95, 80, 80, 0.3);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title {
+  color: var(--second-color);
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: var(--second-color);
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.btnWrapper {
+  display: flex;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+.btn {
+  width: 100px;
+  margin: 0 auto;
+  padding: 5px;
+  font-size: 15px;
+  border: 2px solid var(--second-color);
+  background-color: var(--third-color);
+  color: var(--second-color);
+  transition: transform 250ms ease, color 250ms ease, box-shadow 250ms ease,
+    background-color 250ms ease;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:hover,
+.btn:active {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  background-color: var(--second-color);
+  color: var(--third-color);
+}

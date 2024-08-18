@@ -5,6 +5,7 @@ import SearchBox from '../../components/SearchBox/SearchBox';
 import { useEffect } from 'react';
 import { fetchContacts } from '../../redux/contacts/operations';
 import { selectError, selectLoading } from '../../redux/contacts/selectors';
+import ConfirmationModal from '../../components/ConfirmationModal/ConfirmationModal';
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ const ContactsPage = () => {
       <ContactList />
       {loading && <h1>Loading...</h1>}
       {error && <h2>Something went wrong. Please try again!</h2>}
+      <ConfirmationModal />
     </div>
   );
 };
