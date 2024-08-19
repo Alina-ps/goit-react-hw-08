@@ -22,9 +22,10 @@
   width: 100px;
   padding: 5px;
   font-size: 20px;
-  background-color: var(--second-color);
-  color: var(--third-color);
-  transition: transform 250ms ease, opacity 250ms ease, box-shadow 250ms ease,
+  border: 2px solid var(--second-color);
+  background-color: var(--third-color);
+  color: var(--second-color);
+  transition: transform 250ms ease, color 250ms ease, box-shadow 250ms ease,
     background-color 250ms ease;
 }
 
@@ -40,5 +41,5 @@
 .btn:active {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   background-color: var(--second-color);
-  opacity: 0.6;
+  color: var(--third-color);
 }

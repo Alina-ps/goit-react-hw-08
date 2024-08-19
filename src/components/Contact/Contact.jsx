@@ -21,12 +21,14 @@ const Contact = ({ id, name, number }) => {
         <p className={s.contactText}>{name}</p>
         <p className={s.contactText}>{number}</p>
       </div>
-      <button className={s.contactBtn} onClick={handleEdit} type="button">
-        Edit
-      </button>
-      <button className={s.contactBtn} onClick={handleDelete} type="button">
-        Delete
-      </button>
+      <div className={s.btnWrapper}>
+        <button className={s.contactBtn} onClick={handleEdit} type="button">
+          Edit
+        </button>
+        <button className={s.contactBtn} onClick={handleDelete} type="button">
+          Delete
+        </button>
+      </div>
     </>
   );
 };
