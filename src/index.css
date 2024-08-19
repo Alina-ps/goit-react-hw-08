@@ -18,6 +18,10 @@
 
 body {
   background-color: var(--first-color);
+  background-image: url(./assets/background-img-1.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   margin: 0;
   display: flex;
   justify-content: center;

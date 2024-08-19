@@ -8,7 +8,7 @@ const HomePage = () => {
   const user = useSelector(selectUser);
 
   return isLoggedIn ? (
-    <div>
+    <div className={s.container}>
       <h1 className={s.title}>Welcome, {user.name}</h1>
     </div>
   ) : (
