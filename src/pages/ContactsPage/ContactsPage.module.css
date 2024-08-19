@@ -1,0 +1,17 @@
+.pageWrapper {
+  margin-top: 50px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.title {
+  text-align: center;
+}
+
+.contactListContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 600px;
+}

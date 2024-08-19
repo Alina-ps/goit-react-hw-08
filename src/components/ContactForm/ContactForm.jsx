@@ -43,13 +43,19 @@ const ContactForm = () => {
   }
 
   return (
-    <div>
+    <div className={s.background}>
       <Formik
         validationSchema={schema}
         initialValues={initialValues}
         onSubmit={handleSubmit}
       >
         <Form className={s.form}>
+          <button
+            className={s.btnClose}
+            onClick={() => dispatch(closeAddForm())}
+          >
+            X
+          </button>
           <label className={s.label}>
             Name
             <Field
@@ -70,10 +76,18 @@ const ContactForm = () => {
             />
             <ErrorMessage name="number" component="span" className={s.error} />
           </label>
-
-          <button className={s.btn} type="submit">
-            Add Contact
-          </button>
+          <div className={s.btnWrapper}>
+            <button className={s.btn} type="submit">
+              Add
+            </button>
+            <button
+              className={s.btn}
+              type="submit"
+              onClick={() => dispatch(closeAddForm())}
+            >
+              Cancel
+            </button>
+          </div>
         </Form>
       </Formik>
     </div>

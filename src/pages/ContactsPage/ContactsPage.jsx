@@ -8,6 +8,8 @@ import { selectError, selectLoading } from '../../redux/contacts/selectors';
 import ConfirmationModal from '../../components/ConfirmationModal/ConfirmationModal';
 import UpdateContactForm from '../../components/UpdateContactForm/UpdateContactForm';
 import AddNewContactBtn from '../../components/AddNewContactBox/AddNewContactBox';
+import s from './ContactsPage.module.css';
+import Loader from '../../components/Loader/Loader';
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
@@ -19,13 +21,16 @@ const ContactsPage = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      <h1>Phonebook</h1>
-      <AddNewContactBtn />
-      <ContactForm />
-      <SearchBox />
-      <ContactList />
-      {loading && <h1>Loading...</h1>}
+    <div className={s.pageWrapper}>
+      <div className={s.searchWrapper}>
+        <AddNewContactBtn />
+        <ContactForm />
+        <SearchBox />
+        <h2 className={s.title}>Contacts</h2>
+      </div>
+      <div className={s.contactListContainer}>
+        {loading ? <Loader /> : <ContactList />}
+      </div>
       {error && <h2>Something went wrong. Please try again!</h2>}
       <UpdateContactForm />
       <ConfirmationModal />

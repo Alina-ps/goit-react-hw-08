@@ -7,7 +7,7 @@ const ContactList = () => {
   const filteredData = useSelector(selectFilteredContacts);
 
   return (
-    <>
+    <div className={s.contactListWrapper}>
       <ul className={s.list}>
         {filteredData.map((contact) => {
           return (
@@ -21,7 +21,7 @@ const ContactList = () => {
           );
         })}
       </ul>
-    </>
+    </div>
   );
 };
 

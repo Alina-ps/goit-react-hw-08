@@ -8,8 +8,9 @@ const AddNewContactBtn = () => {
   const handleAdd = () => {
     dispatch(openAddForm());
   };
+
   return (
-    <div>
+    <div className={s.wrapper}>
       <button className={s.btn} type="submit" onClick={handleAdd}>
         + Add Contact
       </button>

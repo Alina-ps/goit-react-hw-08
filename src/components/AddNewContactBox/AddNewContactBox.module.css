@@ -4,6 +4,11 @@
   --third-color: #e26274;
 }
 
+.wrapper {
+  margin: 0;
+  display: flex;
+}
+
 .btn {
   width: 150px;
   margin: 0 auto;

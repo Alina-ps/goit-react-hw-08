@@ -16,6 +16,9 @@
 }
 
 .contactBtn {
+  width: 80px;
+  height: 40px;
+  padding: 0;
   border: 2px solid var(--second-color);
   background-color: var(--third-color);
   color: var(--second-color);
