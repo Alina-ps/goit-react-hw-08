@@ -14,6 +14,7 @@ const initialState = {
   token: null,
   isLoggedIn: false,
   isRefreshing: false,
+  error: null,
 };
 
 const slice = createSlice({
@@ -25,17 +26,23 @@ const slice = createSlice({
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
+        state.error = null;
+      })
+      .addCase(registerThunk.rejected, (state, action) => {
+        state.error = action.payload;
       })
       .addCase(loginThunk.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
+        state.error = null;
       })
       .addCase(refreshUserThunk.fulfilled, (state, action) => {
         state.isRefreshing = false;
         state.isLoggedIn = true;
         state.user.name = action.payload.name;
         state.user.email = action.payload.email;
+        state.error = null;
       })
       .addCase(logoutThunk.fulfilled, () => {
         return initialState;

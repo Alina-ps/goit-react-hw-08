@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { clearToken, goitAPI, setToken } from '../../config/goitAPI';
+import toast from 'react-hot-toast';
 
 export const registerThunk = createAsyncThunk(
   'auth/register',
@@ -9,6 +10,9 @@ export const registerThunk = createAsyncThunk(
       setToken(data.token);
       return data;
     } catch (error) {
+      toast.error('An account with these credentials already exists!', {
+        style: { background: '#f9ec7e', color: '#e26274' },
+      });
       return thunkAPI.rejectWithValue(error.message);
     }
   }

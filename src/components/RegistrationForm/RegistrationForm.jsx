@@ -56,7 +56,6 @@ const RegistrationForm = () => {
               className={s.error}
             />
           </label>
-
           <button className={s.btn} type="submit">
             Register
           </button>
