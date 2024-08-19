@@ -49,10 +49,11 @@ const ContactForm = () => {
         initialValues={initialValues}
         onSubmit={handleSubmit}
       >
-        {({ errors, handleChange, handleBlur, values }) => (
+        {({ errors, touched, handleChange, handleBlur, values }) => (
           <Form className={s.form}>
             <button
               className={s.btnClose}
+              type="button"
               onClick={() => dispatch(closeAddForm())}
             >
               X
@@ -61,7 +62,7 @@ const ContactForm = () => {
               Name
               <Field
                 className={`${s.input} ${
-                  values.name && (errors.name ? s.invalid : '')
+                  touched.name && (errors.name ? s.invalid : '')
                 }`}
                 type="text"
                 name="name"
@@ -76,7 +77,7 @@ const ContactForm = () => {
               Number
               <Field
                 className={`${s.input} ${
-                  values.number && (errors.number ? s.invalid : '')
+                  touched.number && (errors.number ? s.invalid : '')
                 }`}
                 type="text"
                 name="number"
@@ -97,7 +98,7 @@ const ContactForm = () => {
               </button>
               <button
                 className={s.btn}
-                type="submit"
+                type="button"
                 onClick={() => dispatch(closeAddForm())}
               >
                 Cancel

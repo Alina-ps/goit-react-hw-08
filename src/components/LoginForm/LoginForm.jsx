@@ -38,13 +38,13 @@ const LoginForm = () => {
         initialValues={initialValues}
         onSubmit={handleSubmit}
       >
-        {({ errors, handleChange, handleBlur, values }) => (
+        {({ errors, touched, handleChange, handleBlur, values }) => (
           <Form className={s.form}>
             <label className={s.label}>
               Email
               <Field
                 className={`${s.input} ${
-                  values.email && (errors.email ? s.invalid : '')
+                  touched.email && (errors.email ? s.invalid : '')
                 }`}
                 type="email"
                 name="email"
@@ -59,7 +59,7 @@ const LoginForm = () => {
               Password
               <Field
                 className={`${s.input} ${
-                  values.password && (errors.password ? s.invalid : '')
+                  touched.password && (errors.password ? s.invalid : '')
                 }`}
                 type="password"
                 name="password"

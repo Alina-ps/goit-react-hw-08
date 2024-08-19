@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import {
   registerThunk,
   loginThunk,
@@ -22,24 +22,6 @@ const slice = createSlice({
   initialState,
   extraReducers: (builder) => {
     builder
-      .addCase(registerThunk.fulfilled, (state, action) => {
-        state.user = action.payload.user;
-        state.token = action.payload.token;
-        state.isLoggedIn = true;
-        state.error = null;
-      })
-      .addCase(registerThunk.rejected, (state, action) => {
-        state.error = action.payload;
-      })
-      .addCase(loginThunk.fulfilled, (state, action) => {
-        state.user = action.payload.user;
-        state.token = action.payload.token;
-        state.isLoggedIn = true;
-        state.error = null;
-      })
-      .addCase(loginThunk.rejected, (state, action) => {
-        state.error = action.payload;
-      })
       .addCase(refreshUserThunk.fulfilled, (state, action) => {
         state.isRefreshing = false;
         state.isLoggedIn = true;
@@ -55,7 +37,22 @@ const slice = createSlice({
       })
       .addCase(refreshUserThunk.rejected, (state) => {
         state.isRefreshing = false;
-      });
+      })
+      .addMatcher(
+        isAnyOf(registerThunk.fulfilled, loginThunk.fulfilled),
+        (state, action) => {
+          state.user = action.payload.user;
+          state.token = action.payload.token;
+          state.isLoggedIn = true;
+          state.error = null;
+        }
+      )
+      .addMatcher(
+        isAnyOf(registerThunk.rejected, loginThunk.rejected),
+        (state, action) => {
+          state.error = action.payload;
+        }
+      );
   },
 });
 
