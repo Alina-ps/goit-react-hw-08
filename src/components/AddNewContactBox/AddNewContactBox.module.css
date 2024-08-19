@@ -1,0 +1,38 @@
+:root {
+  --first-color: #e3ccb2;
+  --second-color: #f9ec7e;
+  --third-color: #e26274;
+}
+
+.btn {
+  width: 150px;
+  margin: 0 auto;
+  font-size: 15px;
+  margin-bottom: 10px;
+  background-color: var(--second-color);
+  color: var(--third-color);
+  transition: transform 250ms ease, opacity 250ms ease, box-shadow 250ms ease,
+    background-color 250ms ease;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:hover,
+.btn:active {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  background-color: var(--second-color);
+  opacity: 0.6;
+}
+
+@media screen and (min-width: 768px) {
+  .btn {
+    width: 200px;
+    font-size: 20px;
+  }
+}

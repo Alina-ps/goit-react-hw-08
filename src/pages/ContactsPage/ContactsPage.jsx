@@ -7,6 +7,7 @@ import { fetchContacts } from '../../redux/contacts/operations';
 import { selectError, selectLoading } from '../../redux/contacts/selectors';
 import ConfirmationModal from '../../components/ConfirmationModal/ConfirmationModal';
 import UpdateContactForm from '../../components/UpdateContactForm/UpdateContactForm';
+import AddNewContactBtn from '../../components/AddNewContactBox/AddNewContactBox';
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ const ContactsPage = () => {
   return (
     <div>
       <h1>Phonebook</h1>
+      <AddNewContactBtn />
       <ContactForm />
       <SearchBox />
       <ContactList />

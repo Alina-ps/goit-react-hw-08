@@ -4,6 +4,7 @@ const initialState = {
   isOpen: false,
   contactId: null,
   isEditFormOpen: false,
+  isAddFormOpen: false,
 };
 
 const slice = createSlice({
@@ -26,9 +27,24 @@ const slice = createSlice({
     closeEditForm: () => {
       return initialState;
     },
+    openAddForm: (state, action) => {
+      state.isOpen = false;
+      state.contactId = action.payload;
+      state.isEditFormOpen = false;
+      state.isAddFormOpen = true;
+    },
+    closeAddForm: () => {
+      return initialState;
+    },
   },
 });
 
 export const modalReducer = slice.reducer;
-export const { openModal, closeModal, openEditForm, closeEditForm } =
-  slice.actions;
+export const {
+  openModal,
+  closeModal,
+  openEditForm,
+  closeEditForm,
+  openAddForm,
+  closeAddForm,
+} = slice.actions;

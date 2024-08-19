@@ -1,11 +1,14 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import s from './ContactForm.module.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from '../../redux/contacts/operations';
+import { selectAddFormState } from '../../redux/modal/selectors';
+import { closeAddForm } from '../../redux/modal/slice';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
+  const isAddFormOpen = useSelector(selectAddFormState);
 
   const initialValues = {
     name: '',
@@ -19,6 +22,7 @@ const ContactForm = () => {
     };
     dispatch(addContact(newContact));
     actions.resetForm();
+    dispatch(closeAddForm());
   };
 
   const schema = Yup.object().shape({
@@ -33,6 +37,10 @@ const ContactForm = () => {
         'Number must be in the format 111-111-1111'
       ),
   });
+
+  if (!isAddFormOpen) {
+    return null;
+  }
 
   return (
     <div>
