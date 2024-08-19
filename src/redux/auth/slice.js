@@ -37,6 +37,9 @@ const slice = createSlice({
         state.isLoggedIn = true;
         state.error = null;
       })
+      .addCase(loginThunk.rejected, (state, action) => {
+        state.error = action.payload;
+      })
       .addCase(refreshUserThunk.fulfilled, (state, action) => {
         state.isRefreshing = false;
         state.isLoggedIn = true;

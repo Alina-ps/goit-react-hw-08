@@ -10,7 +10,7 @@ export const registerThunk = createAsyncThunk(
       setToken(data.token);
       return data;
     } catch (error) {
-      toast.error('An account with these credentials already exists!', {
+      toast.error('This email is already registered.', {
         style: { background: '#f9ec7e', color: '#e26274' },
       });
       return thunkAPI.rejectWithValue(error.message);
@@ -26,6 +26,9 @@ export const loginThunk = createAsyncThunk(
       setToken(data.token);
       return data;
     } catch (error) {
+      toast.error('This email is not registered or password is invalid.', {
+        style: { background: '#f9ec7e', color: '#e26274' },
+      });
       return thunkAPI.rejectWithValue(error.message);
     }
   }

@@ -2,6 +2,7 @@
   --first-color: #e3ccb2;
   --second-color: #f9ec7e;
   --third-color: #e26274;
+  --error-color: #d32f2f;
 }
 
 .background {
@@ -80,6 +81,15 @@
 
 .input::placeholder {
   color: var(--first-color);
+}
+
+.invalid {
+  color: var(--error-color);
+  border-color: var(--error-color);
+}
+
+.invalid:focus {
+  border: 2px solid var(--error-color);
 }
 
 .btnWrapper {

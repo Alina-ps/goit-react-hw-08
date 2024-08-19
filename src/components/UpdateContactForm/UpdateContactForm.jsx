@@ -58,46 +58,62 @@ const UpdateContactForm = () => {
         initialValues={initialValues}
         onSubmit={handleSubmit}
       >
-        <Form className={s.form}>
-          <button
-            className={s.btnClose}
-            onClick={() => dispatch(closeEditForm())}
-          >
-            X
-          </button>
-          <label className={s.label}>
-            Name
-            <Field
-              className={s.input}
-              type="text"
-              name="name"
-              placeholder="e.g. Peter Parker"
-            />
-            <ErrorMessage name="name" component="span" className={s.error} />
-          </label>
-          <label className={s.label}>
-            Number
-            <Field
-              className={s.input}
-              type="text"
-              name="number"
-              placeholder="e.g. 111-111-1111"
-            />
-            <ErrorMessage name="number" component="span" className={s.error} />
-          </label>
-          <div className={s.btnWrapper}>
-            <button className={s.btn} type="submit">
-              Save
-            </button>
+        {({ errors, handleChange, handleBlur, values }) => (
+          <Form className={s.form}>
             <button
-              className={s.btn}
-              type="submit"
+              className={s.btnClose}
               onClick={() => dispatch(closeEditForm())}
             >
-              Cancel
+              X
             </button>
-          </div>
-        </Form>
+            <label className={s.label}>
+              Name
+              <Field
+                className={`${s.input} ${
+                  values.name && (errors.name ? s.invalid : '')
+                }`}
+                type="text"
+                name="name"
+                placeholder="e.g. Peter Parker"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.name}
+              />
+              <ErrorMessage name="name" component="span" className={s.error} />
+            </label>
+            <label className={s.label}>
+              Number
+              <Field
+                className={`${s.input} ${
+                  values.number && (errors.number ? s.invalid : '')
+                }`}
+                type="text"
+                name="number"
+                placeholder="e.g. 111-111-1111"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.number}
+              />
+              <ErrorMessage
+                name="number"
+                component="span"
+                className={s.error}
+              />
+            </label>
+            <div className={s.btnWrapper}>
+              <button className={s.btn} type="submit">
+                Save
+              </button>
+              <button
+                className={s.btn}
+                type="submit"
+                onClick={() => dispatch(closeEditForm())}
+              >
+                Cancel
+              </button>
+            </div>
+          </Form>
+        )}
       </Formik>
     </div>
   );
