@@ -12,7 +12,6 @@
   font-size: 20px;
 }
 
-.link:hover,
-.link:focus {
+.active {
   color: #f9ec7e;
 }

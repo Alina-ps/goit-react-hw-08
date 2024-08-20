@@ -1,13 +1,11 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { selectIsLoggedIn } from '../../redux/auth/selectors';
+import { useDispatch } from 'react-redux';
 import { loginThunk } from '../../redux/auth/operations';
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import s from './LoginForm.module.css';
 import * as Yup from 'yup';
 
 const LoginForm = () => {
-  const isLoggedIn = useSelector(selectIsLoggedIn);
   const dispatch = useDispatch();
 
   const initialValues = {
@@ -28,9 +26,6 @@ const LoginForm = () => {
       .min(7, 'No less than 7 digits'),
   });
 
-  if (isLoggedIn) {
-    return <Navigate to="/" />;
-  }
   return (
     <div>
       <Formik
