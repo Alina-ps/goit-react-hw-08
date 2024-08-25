@@ -43,6 +43,7 @@ The Contacts App is a comprehensive web application designed for managing contac
 - **Formik**: Simplifies form handling and validation.
 - **Yup**: Provides schema validation for forms.
 - **Vite**: A build tool for bundling and optimizing the application.
+- **Axios**: For making HTTP requests.
 - **clsx**: Utility for conditional CSS class names.
 - **React Hot Toast**: For displaying toast notifications.
 - **React Loader Spinner**: Provides a loading spinner component.
