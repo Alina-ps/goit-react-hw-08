@@ -1,6 +1,6 @@
 # My Contacts App
 
-The Contacts App is a comprehensive web application designed for managing contacts. It offers functionalities such as adding, updating, and deleting contacts, with a user-friendly interface. The application is built with modern web technologies to provide a responsive and dynamic experience.
+This application allows users to manage their contacts, providing features for adding, updating, and deleting contacts. It includes user authentication and utilizes Redux for state management with persistence, ensuring a consistent user experience.
 
 ## Features
 
