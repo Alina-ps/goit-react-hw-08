@@ -41,12 +41,12 @@ const RegistrationForm = () => {
       >
         {({ errors, touched, handleChange, handleBlur, values }) => (
           <Form className={s.form}>
-            <label className={s.label}>
-              Name
+            <div className={s.inputBox}>
               <Field
                 className={`${s.input} ${
                   touched.name && (errors.name ? s.invalid : '')
                 }`}
+                id="name"
                 type="text"
                 name="name"
                 placeholder="Enter your name"
@@ -54,14 +54,18 @@ const RegistrationForm = () => {
                 onBlur={handleBlur}
                 value={values.name}
               />
+              <label className={s.label} htmlFor="name">
+                Name
+              </label>
               <ErrorMessage name="name" component="span" className={s.error} />
-            </label>
-            <label className={s.label}>
-              Email
+            </div>
+
+            <div className={s.inputBox}>
               <Field
                 className={`${s.input} ${
                   touched.email && (errors.email ? s.invalid : '')
                 }`}
+                id="email"
                 type="email"
                 name="email"
                 placeholder="Enter your email"
@@ -69,14 +73,18 @@ const RegistrationForm = () => {
                 onBlur={handleBlur}
                 value={values.email}
               />
+              <label className={s.label} htmlFor="email">
+                Email
+              </label>
               <ErrorMessage name="email" component="span" className={s.error} />
-            </label>
-            <label className={s.label}>
-              Password
+            </div>
+
+            <div className={s.inputBox}>
               <Field
                 className={`${s.input} ${
                   touched.password && (errors.password ? s.invalid : '')
                 }`}
+                id="password"
                 type="password"
                 name="password"
                 placeholder="Enter your password"
@@ -84,21 +92,25 @@ const RegistrationForm = () => {
                 onBlur={handleBlur}
                 value={values.password}
               />
+              <label className={s.label} htmlFor="password">
+                Password
+              </label>
               <ErrorMessage
                 name="password"
                 component="span"
                 className={s.error}
               />
-            </label>
+            </div>
+
             <button className={s.btn} type="submit">
               Register
             </button>
-            <p className={s.text}>
-              You already have an account?
+            <div className={s.textContainer}>
+              <p className={s.text}>You already have an account?</p>
               <Link to="/login" className={s.span}>
                 Log in
               </Link>
-            </p>
+            </div>
           </Form>
         )}
       </Formik>

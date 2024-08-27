@@ -1,14 +1,15 @@
 :root {
-  --first-color: #e3ccb2;
-  --second-color: #f9ec7e;
-  --third-color: #e26274;
+  --first-color: #f9f7e8;
+  --second-color: #ed4729;
+  --third-color: #618264;
+  --fourth-color: #a28b55;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: #e26274;
+  /* color: #e26274; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,7 +18,7 @@
 }
 
 body {
-  background-color: var(--first-color);
+  /* background-color: var(--first-color);
   background-image: url(./assets/background-img-1.jpeg);
   background-repeat: no-repeat;
   background-position: center;
@@ -27,7 +28,11 @@ body {
   justify-content: center;
   place-items: center;
   min-height: 100vh;
+  overflow: hidden; */
+  background-color: var(--first-color);
   overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {

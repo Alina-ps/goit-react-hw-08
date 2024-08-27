@@ -4,7 +4,7 @@ import { Toaster } from 'react-hot-toast';
 
 const RegistrationPage = () => {
   return (
-    <div>
+    <div className={s.container}>
       <Toaster />
       <h2 className={s.title}>Registration</h2>
       <RegistrationForm />
