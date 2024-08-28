@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import s from './AddNewContactBox.module.css';
 import { openAddForm } from '../../redux/modal/slice';
+import { FaUserPlus } from 'react-icons/fa';
 
 const AddNewContactBtn = () => {
   const dispatch = useDispatch();
@@ -12,7 +13,10 @@ const AddNewContactBtn = () => {
   return (
     <div className={s.wrapper}>
       <button className={s.btn} type="submit" onClick={handleAdd}>
-        + Add Contact
+        <div className={s.svg}>
+          <FaUserPlus />
+        </div>
+        <p className={s.textBtn}>Add Contact</p>
       </button>
     </div>
   );

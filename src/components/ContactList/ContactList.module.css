@@ -1,11 +1,12 @@
 :root {
-  --first-color: #e3ccb2;
-  --second-color: #f9ec7e;
-  --third-color: #e26274;
+  --first-color: #f9f7e8;
+  --second-color: #ed4729;
+  --third-color: #618264;
+  --fourth-color: #a28b55;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
   height: 20px;
   padding-right: 5px;
 }
@@ -16,7 +17,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--second-color);
+  background-color: var(--fourth-color);
   border-radius: 8px;
   cursor: pointer;
 }
@@ -42,21 +43,22 @@
 }
 
 .item {
-  padding: 15px;
+  padding: 10px;
   width: 250px;
   font-size: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--third-color);
+  background-color: var(--first-color);
+  box-shadow: 0 5px 15px rgba(95, 80, 80, 0.3);
   border-radius: 8px;
   border: none;
-  color: var(--second-color);
+  color: var(--fourth-color);
 }
 
 @media screen and (min-width: 768px) {
   .item {
-    padding: 20px;
+    padding: 15px;
     width: 500px;
     font-size: 20px;
     height: 80px;

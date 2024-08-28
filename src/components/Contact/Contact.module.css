@@ -1,30 +1,47 @@
 :root {
-  --first-color: #e3ccb2;
-  --second-color: #f9ec7e;
-  --third-color: #e26274;
+  --first-color: #f9f7e8;
+  --second-color: #ed4729;
+  --third-color: #618264;
+  --fourth-color: #a28b55;
 }
 
 .contactText {
   padding: 0;
   margin: 0;
+  font-size: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .contactText {
+    font-size: 18px;
+  }
 }
 
 .btnWrapper {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 2px;
+}
+
+@media screen and (min-width: 768px) {
+  .btnWrapper {
+    gap: 5px;
+  }
 }
 
 .contactBtn {
-  width: 80px;
-  height: 40px;
-  padding: 0;
-  border: 2px solid var(--second-color);
-  background-color: var(--third-color);
-  color: var(--second-color);
-  font-size: 15px;
-  transition: transform 250ms ease, opacity 250ms ease, box-shadow 250ms ease,
-    background-color 250ms ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 4px;
+  color: var(--third-color);
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 10px;
+  transition: 0.5s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .contactBtn:active {
@@ -37,16 +54,32 @@
 
 .contactBtn:hover,
 .contactBtn:active {
+  background-color: var(--third-color);
+  color: var(--first-color);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  background-color: var(--second-color);
-  color: var(--third-color);
 }
 
 @media screen and (min-width: 768px) {
-  .contactText {
-    margin: 10px;
-  }
   .contactBtn {
-    font-size: 20px;
+    padding: 4px;
+    font-size: 15px;
+  }
+}
+
+.svg {
+  margin-right: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textBtn {
+  margin: 0;
+  font-size: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .textBtn {
+    font-size: 15px;
   }
 }

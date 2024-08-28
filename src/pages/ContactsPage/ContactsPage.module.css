@@ -1,11 +1,27 @@
+:root {
+  --first-color: #f9f7e8;
+  --second-color: #ed4729;
+  --third-color: #618264;
+  --fourth-color: #a28b55;
+}
+
 .pageWrapper {
+  padding-top: 80px;
   margin-top: 50px;
-  padding: 20px;
   box-sizing: border-box;
 }
 
 .title {
   text-align: center;
+  font-size: 24px;
+  margin: 10px;
+  color: var(--fourth-color);
+}
+
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: 32px;
+  }
 }
 
 .contactListContainer {
@@ -13,5 +29,4 @@
   justify-content: center;
   align-items: center;
   height: 500px;
-  width: 600px;
 }
