@@ -21,11 +21,11 @@ const HomePage = () => {
           contact information. Sign up today to build your personalized contact
           list and access it anytime, anywhere.
         </p>
-        <div className={s.wrapper}>
-          <Link to="/register" className={s.btn}>
-            Get Started
-          </Link>
-        </div>
+      </div>
+      <div className={s.wrapper}>
+        <Link to="/register" className={s.btn}>
+          Get Started
+        </Link>
       </div>
     </div>
   );
