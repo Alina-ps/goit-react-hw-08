@@ -9,59 +9,52 @@
   background-color: var(--first-color);
   background-image: url(../../assets/bg-img-4.png);
   background-repeat: no-repeat;
-  background-position: 50% 75%;
-  /* background-attachment: fixed; */
-  /* background-attachment: scroll; */
+  background-position: 50% 90%;
   overflow: hidden;
-  background-size: 200px;
+  background-size: 500px;
   margin: 0 auto;
   min-height: 90vh;
-  padding-top: 80px;
+  padding-top: 150px;
 }
 
 @media screen and (min-width: 768px) {
   .container {
+    background-position: 50% 120%;
     background-size: 800px;
-    padding-top: 150px;
+    padding-top: 80px;
   }
-}
-
-.textWrapper {
-  margin: 12px;
 }
 
 @media screen and (min-width: 768px) {
   .textWrapper {
-    margin: 20px;
-    max-width: 1000px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20px;
   }
 }
 
 .title {
   padding: 0;
   margin: 0;
-  /* margin: 0 auto; */
-  font-size: 24px;
-  text-align: center;
+  margin-bottom: 15px;
+  font-size: 35px;
   color: var(--fourth-color);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 @media screen and (min-width: 768px) {
   .title {
+    margin-bottom: 20px;
     font-size: 60px;
-    /* margin-bottom: 20px; */
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   }
 }
 
 .subtitle {
-  font-size: 12px;
+  margin: 0;
+  font-size: 18px;
+  padding: 12px;
   text-align: center;
   font-weight: bold;
   color: var(--fourth-color);
@@ -70,6 +63,7 @@
 @media screen and (min-width: 768px) {
   .subtitle {
     font-size: 32px;
+    padding: 15px;
     max-width: 1000px;
   }
 }
@@ -81,12 +75,14 @@
   width: 100%;
   max-width: 300px;
   margin: 0 auto;
+  margin-top: 15px;
   max-height: 50px;
 }
 
 @media screen and (min-width: 768px) {
   .wrapper {
     width: 500px;
+    margin-bottom: 20px;
   }
 }
 

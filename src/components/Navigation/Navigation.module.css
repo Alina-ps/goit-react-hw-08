@@ -9,7 +9,7 @@
   color: #f9f7e8;
   font-weight: 700;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .active {
@@ -22,6 +22,6 @@
     gap: 24px;
   }
   .link {
-    font-size: 30px;
+    font-size: 25px;
   }
 }
