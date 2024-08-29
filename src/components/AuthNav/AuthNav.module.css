@@ -5,6 +5,13 @@
   margin-right: 25px;
 }
 
+@media screen and (min-width: 768px) {
+  .nav {
+    margin-right: 40px;
+    gap: 24px;
+  }
+}
+
 .link {
   color: #f9f7e8;
   font-weight: 700;
@@ -18,18 +25,13 @@
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
-.active {
-  color: #a28b55;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-}
-
 @media screen and (min-width: 768px) {
-  .nav {
-    margin-right: 40px;
-
-    gap: 24px;
-  }
   .link {
     font-size: 25px;
   }
+}
+
+.active {
+  color: #a28b55;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }

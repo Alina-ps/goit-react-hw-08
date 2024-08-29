@@ -39,12 +39,7 @@ const UpdateContactForm = () => {
       .required('This field is required!')
       .min(3, 'Too short!')
       .max(50, 'Too long!'),
-    number: Yup.string()
-      .required('This field is required!')
-      .matches(
-        /^\d{3}-\d{3}-\d{4}$/,
-        'Number must be in the format 111-111-1111'
-      ),
+    number: Yup.string().required('This field is required!'),
   });
 
   if (!isEditFormOpen) {
@@ -67,12 +62,12 @@ const UpdateContactForm = () => {
             >
               X
             </button>
-            <label className={s.label}>
-              Name
+            <div className={s.inputBox}>
               <Field
                 className={`${s.input} ${
                   touched.name && (errors.name ? s.invalid : '')
                 }`}
+                id="name"
                 type="text"
                 name="name"
                 placeholder="e.g. Peter Parker"
@@ -80,14 +75,18 @@ const UpdateContactForm = () => {
                 onBlur={handleBlur}
                 value={values.name}
               />
+              <label className={s.label} htmlFor="name">
+                Name
+              </label>
               <ErrorMessage name="name" component="span" className={s.error} />
-            </label>
-            <label className={s.label}>
-              Number
+            </div>
+
+            <div className={s.inputBox}>
               <Field
                 className={`${s.input} ${
                   touched.number && (errors.number ? s.invalid : '')
                 }`}
+                id="number"
                 type="text"
                 name="number"
                 placeholder="e.g. 111-111-1111"
@@ -95,12 +94,15 @@ const UpdateContactForm = () => {
                 onBlur={handleBlur}
                 value={values.number}
               />
+              <label className={s.label} htmlFor="number">
+                Number
+              </label>
               <ErrorMessage
                 name="number"
                 component="span"
                 className={s.error}
               />
-            </label>
+            </div>
             <div className={s.btnWrapper}>
               <button className={s.btn} type="submit">
                 Save

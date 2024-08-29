@@ -11,7 +11,7 @@ export const registerThunk = createAsyncThunk(
       return data;
     } catch (error) {
       toast.error('This email is already registered.', {
-        style: { background: '#f9ec7e', color: '#e26274' },
+        style: { background: '#618264', color: '#f9f7e8' },
       });
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -27,7 +27,7 @@ export const loginThunk = createAsyncThunk(
       return data;
     } catch (error) {
       toast.error('This email is not registered or password is invalid.', {
-        style: { background: '#f9ec7e', color: '#e26274' },
+        style: { background: '#618264', color: '#f9f7e8' },
       });
       return thunkAPI.rejectWithValue(error.message);
     }

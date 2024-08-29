@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import s from './LoginForm.module.css';
 import * as Yup from 'yup';
+import { MdArrowBack } from 'react-icons/md';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -53,7 +54,6 @@ const LoginForm = () => {
               </label>
               <ErrorMessage name="email" component="span" className={s.error} />
             </div>
-
             <div className={s.inputBox}>
               <Field
                 className={`${s.input} ${
@@ -76,7 +76,6 @@ const LoginForm = () => {
                 className={s.error}
               />
             </div>
-
             <button className={s.btn} type="submit">
               Login
             </button>
@@ -84,6 +83,15 @@ const LoginForm = () => {
               <p className={s.text}>You do not have an account? </p>
               <Link to="/register" className={s.span}>
                 Sign up!
+              </Link>
+            </div>
+
+            <div className={s.linkContainer}>
+              <div className={s.svg}>
+                <MdArrowBack />
+              </div>
+              <Link to="/" className={s.homeLink}>
+                to home page
               </Link>
             </div>
           </Form>

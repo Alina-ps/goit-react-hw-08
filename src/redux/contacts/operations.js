@@ -20,7 +20,7 @@ export const deleteContact = createAsyncThunk(
     try {
       const { data } = await goitAPI.delete(`contacts/${id}`);
       toast.success('Contact deleted successfully!', {
-        style: { background: '#f9ec7e', color: '#e26274' },
+        style: { background: '#f9f7e8', color: '#a28b55' },
       });
       return data.id;
     } catch (error) {
@@ -35,7 +35,7 @@ export const addContact = createAsyncThunk(
     try {
       const { data } = await goitAPI.post('contacts', body);
       toast.success('Congrats. Your contact is added!', {
-        style: { background: '#f9ec7e', color: '#e26274' },
+        style: { background: '#f9f7e8', color: '#a28b55' },
       });
       return data;
     } catch (error) {
@@ -50,7 +50,7 @@ export const editContact = createAsyncThunk(
     try {
       const { data } = await goitAPI.patch(`contacts/${id}`, updatedContact);
       toast.success('Contact updated successfully!', {
-        style: { background: '#f9ec7e', color: '#e26274' },
+        style: { background: '#f9f7e8', color: '#a28b55' },
       });
       return data;
     } catch (error) {

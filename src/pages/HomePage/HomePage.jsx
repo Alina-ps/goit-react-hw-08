@@ -9,12 +9,12 @@ const HomePage = () => {
 
   return isLoggedIn ? (
     <div className={s.container}>
-      <h1 className={s.title}>Welcome, {user.name}</h1>
+      <h1 className={s.userTitle}>Welcome, {user.name}</h1>
     </div>
   ) : (
     <div className={s.container}>
       <div className={s.textWrapper}>
-        <h1 className={s.title}>Welcome to My Contacts App</h1>
+        <h2 className={s.title}>Welcome to My Contacts App</h2>
         <p className={s.subtitle}>
           This app helps you easily manage and organize your contacts in one
           secure place. You can effortlessly add, search, update, and store
