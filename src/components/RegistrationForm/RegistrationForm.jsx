@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import s from './RegistrationForm.module.css';
 import * as Yup from 'yup';
+import { MdArrowBack } from 'react-icons/md';
 
 const RegistrationForm = () => {
   const dispatch = useDispatch();
@@ -111,6 +112,13 @@ const RegistrationForm = () => {
                 Log in
               </Link>
             </div>
+
+            <Link to="/" className={s.homeLink}>
+              <div className={s.svg}>
+                <MdArrowBack />
+              </div>
+              <p className={s.linkText}>to home page</p>
+            </Link>
           </Form>
         )}
       </Formik>

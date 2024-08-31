@@ -174,38 +174,46 @@
   }
 }
 
-.linkContainer {
+.homeLink {
+  font-size: 15px;
+  padding: 0;
+  text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
   gap: 3px;
   color: var(--fourth-color);
   transition: 0.5s;
 }
 
-.linkContainer:hover {
+.homeLink:hover {
   transform: translateX(-2%);
   color: var(--second-color);
-}
-
-.svg {
-  font-size: 20px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.homeLink {
-  color: var(--fourth-color);
-  font-size: 15px;
-  padding: 0;
-  text-decoration: none;
 }
 
 @media screen and (min-width: 768px) {
   .homeLink {
     font-size: 24px;
   }
+}
+
+.svg {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .svg {
+    font-size: 24px;
+  }
+}
+
+.linkText {
+  padding: 0;
+  margin: 0;
 }
 
 .error {

@@ -86,14 +86,12 @@ const LoginForm = () => {
               </Link>
             </div>
 
-            <div className={s.linkContainer}>
+            <Link to="/" className={s.homeLink}>
               <div className={s.svg}>
                 <MdArrowBack />
               </div>
-              <Link to="/" className={s.homeLink}>
-                to home page
-              </Link>
-            </div>
+              <p className={s.linkText}>to home page</p>
+            </Link>
           </Form>
         )}
       </Formik>
